@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 /**
  *
  *  <div id="parent">
@@ -33,5 +36,5 @@ const parent = React.createElement("div", { id: "parent" }, [
 // );
 console.log(parent); // It will return ReactElement(Object) => HTML(Browser Understands)
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(parent);
