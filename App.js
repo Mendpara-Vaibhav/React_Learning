@@ -1,40 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
-/**
- *
- *  <div id="parent">
- *    <div id="child">
- *        <h1>I'm h1 tag</h1>
- *        <h2>I'm h2 tag</h2>
- *    </div>
- *    <div id="child2">
- *        <h1>I'm h1 tag</h1>
- *        <h2>I'm h2 tag</h2>
- *    </div>
- *  </div>
- *
- */
+// React.creteElement => ReactElement-JS Object => when we render the element onto the DOM then it becomes HTMLElement
 
-//JSX
+const heading = React.createElement("h1", { id: "heading" }, "React Learning");
+console.log(heading);
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-]);
+//JSX - is not HTML in JS
+//JSX - is HTML-like or XML-like syntax
+const jsxHeading = <h1 className="head">React Learning using JSX</h1>;
+console.log(jsxHeading);
+//JSX (transpiled before it reaches the JS Engine) - parcel - Babel(package)
+// JSX => Babel transpiles it to React.createElement => ReactElement-JS object => HTMLElement(render)
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading", xyz: "abc" },
-//   "Hello world from React"
-// );
-console.log(parent); // It will return ReactElement(Object) => HTML(Browser Understands)
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(parent);
+root.render(jsxHeading);
