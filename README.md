@@ -15,7 +15,17 @@
 - Code Splitting
 - Differential Bundling - support older browsers
 - Diagnostic
-- Error Handling 
+- Error Handling
 - HTTPs
 - Tree Shaking - remove unused code
 - Different dev and production bundles
+
+# Two types of Export/Import
+
+- Default Export/Import
+  export default Component;
+  import Component from "path";
+
+- Named Export/Import
+  export const Component;
+  import { Component } from "path";
