@@ -3,26 +3,24 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData } = props;
 
-  // const {
-  //   name,
-  //   cuisines,
-  //   avgRating,
-  //   costForTwo,
-  //   // deliveryTime,
-  // } = resData?.card?.card?.info;
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
+    resData?.info;
 
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-logo"
         alt="res-logo"
-        src={CDN_URL + resData?.card?.card?.info.cloudinaryImageId}
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
       />
-      <h3>{resData?.card?.card?.info.name}</h3>
-      <h4>{resData?.card?.card?.info.cuisines.join(",")}</h4>
-      <h4>{resData?.card?.card?.info.avgRating} stars</h4>
-      <h4>₹{resData?.card?.card?.info.costForTwo / 100} FOR TWO</h4>
-      <h4>{resData?.card?.card?.info.sla.slaString}</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(",")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo} </h4>
+      <h4>{resData?.info.sla.deliveryTime} minutes</h4>
     </div>
   );
 };

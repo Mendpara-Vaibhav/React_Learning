@@ -20,6 +20,10 @@
 - Tree Shaking - remove unused code
 - Different dev and production bundles
 
+# map method
+
+remember: not using keys (not acceptable) <<< index as key <<<<< unique id (best practice)
+
 # Two types of Export/Import
 
 - Default Export/Import
