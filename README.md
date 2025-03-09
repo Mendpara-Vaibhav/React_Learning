@@ -49,3 +49,12 @@ remember: not using keys (not acceptable) <<< index as key <<<<< unique id (best
 
 - Client Side Routing -> this react is client side because we are not making any network call because all component are allready loaded
 - Server Side Routing -> you make a network call and the page is coming from server
+
+# Optimising
+
+- Chunking
+- Code Splitting
+- Dynamic Bundling
+- lazy loading
+- on demand loading
+- dynamic import
