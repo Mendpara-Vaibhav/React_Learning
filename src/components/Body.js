@@ -1,6 +1,6 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
-import resList from "../utils/mockData";
+// import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -9,6 +9,10 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardOpened = withOpenedLabel(RestaurantCard);
+
+  console.log(listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -82,7 +86,11 @@ const Body = () => {
             style={{ textDecoration: "none" }}
             to={"/restaurants/" + restaurant.info?.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info?.isOpen ? (
+              <RestaurantCardOpened resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

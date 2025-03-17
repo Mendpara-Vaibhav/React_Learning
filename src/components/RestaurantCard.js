@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/constants";
+// import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -26,6 +26,22 @@ const RestaurantCard = (props) => {
       <h4>{resData?.info.sla.deliveryTime} minutes</h4>
     </div>
   );
+};
+
+// Higher Order Functions
+// input - RestaurantCard ==>> RestaurantCardOpened
+
+export const withOpenedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-green-500 text-white font-bold m-2 p-2 rounded-lg">
+          Opened
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
