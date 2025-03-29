@@ -12,7 +12,7 @@ const Body = () => {
 
   const RestaurantCardOpened = withOpenedLabel(RestaurantCard);
 
-  console.log(listOfRestaurants);
+  // console.log(listOfRestaurants);
 
   useEffect(() => {
     fetchData();
