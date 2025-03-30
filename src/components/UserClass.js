@@ -12,7 +12,7 @@ class UserClass extends React.Component {
         location: "default",
       },
     };
-    console.log(this.props.name + "Child Constructor");
+    // console.log(this.props.name + "Child Constructor");
   }
 
   async componentDidMount() {
@@ -25,7 +25,7 @@ class UserClass extends React.Component {
       userInfo: json,
     });
 
-    console.log(json);
+    // console.log(json);
   }
 
   componentDidUpdate() {
