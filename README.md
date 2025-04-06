@@ -58,3 +58,11 @@ remember: not using keys (not acceptable) <<< index as key <<<<< unique id (best
 - lazy loading
 - on demand loading
 - dynamic import
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux 
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector 
