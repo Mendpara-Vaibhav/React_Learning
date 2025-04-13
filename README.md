@@ -60,9 +60,49 @@ remember: not using keys (not acceptable) <<< index as key <<<<< unique id (best
 - dynamic import
 
 # Redux Toolkit
-- Install @reduxjs/toolkit and react-redux 
+
+- Install @reduxjs/toolkit and react-redux
 - Build our store
 - Connect our store to our app
 - Slice (cartSlice)
 - dispatch(action)
-- Selector 
+- Selector
+
+# These both are equal in redux toolkit to use useSelector
+
+- const cartItems = useSelector((store) => store.cart.items);
+- const store = useSelector((store) => store);
+  const cartItems = store.cart.items;
+
+# Vanilla(older) Redux => DON'T MUTATE STATE, Returning was mandatory
+
+- In older version of Redux we have to do
+  like this:- const newState = [...state];
+  newState.items.push(action.payload);
+  return newState; // this returning is mandatory
+
+# Redux Toolkit, Returning was not mandatory
+
+- Redux Toolkit uses immer js package behind the scenes(BTS)
+
+- In Redux Toolkit we directly mutating the state here
+  like this:- state.items.push(action.payload);
+
+# Types of testing (developer)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing - e2e testing
+
+# Setting up Testing in our app
+
+- Install React Testing Library
+- Installed jest
+- Installed Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest configuration -> npx jest --init
+- Install jsdom library
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- Install -> npm i -D @testing-library/jest-dom
