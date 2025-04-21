@@ -8,8 +8,8 @@ const RestaurantCard = (props) => {
 
   return (
     <div
+      data-testid="resCard"
       className="res-card m-4 p-4 w-[270px] rounded-lg bg-gray-100 hover:bg-gray-200"
-      // style={{ backgroundColor: "#f0f0f0" }}
     >
       <img
         className="res-logo rounded-lg"
